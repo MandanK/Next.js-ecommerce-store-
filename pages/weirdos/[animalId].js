@@ -34,7 +34,6 @@ export function getServerSideProps(context) {
   // This is the variable that we get from the URL
   // (anything after the slash)
   const animalId = context.query.animalId;
-  console.log('db', animalsDatabase);
 
   const matchingAnimal = animalsDatabase.find((animal) => {
     if (animal.id === animalId) {
@@ -45,7 +44,7 @@ export function getServerSideProps(context) {
   });
   return {
     props: {
-      animalId: matchingAnimal,
+      animal: matchingAnimal,
     },
   };
 }

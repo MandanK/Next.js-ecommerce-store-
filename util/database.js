@@ -1,4 +1,4 @@
-const animals = [
+const animalsDatabase = [
   {
     id: 1,
     name: 'Tony',
@@ -14,7 +14,7 @@ const animals = [
     age: 3,
   },
   {
-    ide: 3,
+    id: 3,
     name: 'Mani',
     type: 'Monkey',
     accessory: 'Cane',
@@ -29,4 +29,4 @@ const animals = [
   },
 ];
 
-export default animals;
+export default animalsDatabase;

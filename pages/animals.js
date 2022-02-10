@@ -9,7 +9,7 @@ const weirdosOddStyle = css`
   border: 1px solid #ccc;
   padding: 15px;
   margin-bottom: 20px;
-  min-height: 100px;
+  min-height: 200px;
   background-color: #d4e4e9;
 `;
 
@@ -18,19 +18,19 @@ const weirdosEvenStyle = css`
   border: 1px solid #ccc;
   padding: 15px;
   margin-bottom: 20px;
-  min-height: 100px;
+  min-height: 200px;
 `;
 
 const productImageDiv = css`
   float: left;
   margin: 0 15px 0 0;
-  height: 100px;
+  height: 200px;
 `;
 
 const productImage = css`
   float: left;
   margin: 0 15px 0 0;
-  height: 100px;
+  height: 200px;
 `;
 
 const productDescription = css`
@@ -48,10 +48,10 @@ export default function Animals(props) {
   return (
     <Layout>
       <Head>
-        <title>Weirdos</title>
+        <title>Weirdies</title>
         <meta description="A list of products and their descriptions" />
       </Head>
-      <h1>Meet some weirdos</h1>
+      <h1>Meet Weirdies</h1>
 
       {props.animals.map((animal) => {
         return (
@@ -61,7 +61,11 @@ export default function Animals(props) {
           >
             {/* Dynamic link, eg. /animals/1, / animals/2, etc */}
             <div css={productImageDiv}>
-              <img css={productImage} src="BIZARRE.gif" alt="BIZARRE" />
+              <img
+                css={productImage}
+                src={'/images/' + animal.image}
+                alt="BIZARRE"
+              />
             </div>
             <div css={productName}>
               <Link href={`/animals/${animal.id}`}>
@@ -71,15 +75,7 @@ export default function Animals(props) {
               </Link>
             </div>
             <div>
-              <div css={productDescription}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </div>
+              <div css={productDescription}>{animal.description}</div>
             </div>
           </div>
         );

@@ -23,15 +23,13 @@ const topBarStyle = css`
   position: sticky;
   top: 0;
   z-index: 10001;
-
   font-size: 18px;
-
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
   background-color: black;
   color: white;
   padding: 2px 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bold;
   line-height: 0.1;
   -webkit-font-smoothing: antialiased;
@@ -46,13 +44,17 @@ export default function Header() {
       </div>
       <div css={headerStyles}>
         <div css={logoStyles}>
-          <img src="/BIZARRE.gif" width="160" alt="Bizarre Bazaar.com Logo" />
+          <img
+            src="/images/BIZARRE.gif"
+            width="160"
+            alt="Bizarre Bazaar.com Logo"
+          />
         </div>
         <Link href="/">
           <a>HOME</a>
         </Link>
         <Link href="/animals">
-          <a>WEIRDOS</a>
+          <a>WEIRDIES</a>
         </Link>
         <Link href="/about">
           <a>ABOUT US</a>

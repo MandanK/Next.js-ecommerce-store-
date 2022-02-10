@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
           }
 
           main {
-            margin: 0 8px;
+            margin: 0 60px;
           }
         `}
       />

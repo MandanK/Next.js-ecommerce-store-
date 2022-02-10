@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Header from './Header';
 
-let wrapper = css`
+const wrapper = css`
   width: 1000px;
   margin: auto;
   a {

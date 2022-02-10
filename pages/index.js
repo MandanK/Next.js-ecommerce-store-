@@ -3,8 +3,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 
-let introVideoStyle = css`
+const h1Style = css`
   text-align: center;
+  padding-bottom: 8px;
+  padding-top: 0.5px;
+`;
+
+const introVideoStyle = css`
+  text-align: center;
+  padding: 25px 25px;
 `;
 
 export default function Home() {
@@ -16,7 +23,10 @@ export default function Home() {
           <meta name="description" content="Welcome to my website" />
         </Head>
 
-        <h1>Home</h1>
+        <div css={h1Style}>
+          {' '}
+          <h1>Home</h1>
+        </div>
         <div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

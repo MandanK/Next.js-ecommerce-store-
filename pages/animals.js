@@ -4,33 +4,57 @@ import Link from 'next/link';
 import Layout from '../components/Layout';
 import weirdosDatabase from '../util/database';
 
+const h1Style = css`
+  padding-bottom: 20px;
+  padding-top: 0.5px;
+  font-size: 15px;
+  text-align: center;
+`;
+
+const productDescriptionStyle = css`
+  float: none;
+`;
+
 const weirdosOddStyle = css`
+  text-align: center;
+  float: left;
+  width: 377px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  padding: 15px;
   margin-bottom: 20px;
   min-height: 200px;
-  background-color: #d4e4e9;
+  background-color: #ffcc4d;
+  padding: 15px;
+  margin: 10px;
+  margin-right: 60px;
 `;
 
 const weirdosEvenStyle = css`
+  text-align: center;
+  float: left;
+  width: 377px;
   border-radius: 5px;
   border: 1px solid #ccc;
   padding: 15px;
-  margin-bottom: 20px;
+  margin: 10px;
   min-height: 200px;
+  margin-right: 60px;
 `;
 
 const productImageDiv = css`
-  float: left;
+  text-align: center;
   margin: 0 15px 0 0;
-  height: 200px;
+  width: 377px;
+  margin-right: 20px;
 `;
 
 const productImage = css`
   float: left;
   margin: 0 15px 0 0;
-  height: 200px;
+  height: 283px;
+  width: 377px;
+  margin-right: 20px;
+  padding-bottom: 10px;
 `;
 
 const productDescription = css`
@@ -39,8 +63,14 @@ const productDescription = css`
 `;
 
 const productName = css`
+  float: none;
   margin: 0 15px 0 0;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: sans-serif;
+  font-weight: bolder;
+`;
+const aStyle = css`
+  color: black;
+  font-size: 17px;
 `;
 
 export default function Animals(props) {
@@ -51,13 +81,19 @@ export default function Animals(props) {
         <title>Weirdies</title>
         <meta description="A list of products and their descriptions" />
       </Head>
-      <h1>Meet Weirdies</h1>
+      <div css={h1Style}>
+        <h1>Meet Weirdies</h1>
+      </div>
 
       {props.animals.map((animal) => {
         return (
           <div
             key={`animal-${animal.id}`}
-            css={animal.id % 2 == 1 ? weirdosEvenStyle : weirdosOddStyle}
+            css={
+              animal.id % 4 == 0 || animal.id % 4 == 1
+                ? weirdosEvenStyle
+                : weirdosOddStyle
+            }
           >
             {/* Dynamic link, eg. /animals/1, / animals/2, etc */}
             <div css={productImageDiv}>
@@ -69,12 +105,13 @@ export default function Animals(props) {
             </div>
             <div css={productName}>
               <Link href={`/animals/${animal.id}`}>
-                <a>
-                  {animal.name} is a {animal.type} with a {animal.accessory}
+                <a css={aStyle}>
+                  {animal.name}{' '}
+                  {/* is a {animal.type} with a {animal.accessory} */}
                 </a>
               </Link>
             </div>
-            <div>
+            <div css={productDescriptionStyle}>
               <div css={productDescription}>{animal.description}</div>
             </div>
           </div>

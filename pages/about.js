@@ -1,5 +1,16 @@
+import { css } from '@emotion/react';
 import Head from 'next/head';
 import Layout from '../components/Layout';
+
+const h1Style = css`
+  text-align: center;
+  padding-bottom: 8px;
+  padding-top: 0.5px;
+`;
+const aboutImageStyle = css`
+  text-align: center;
+  padding: 35px 25px;
+`;
 
 export default function About() {
   return (
@@ -10,7 +21,9 @@ export default function About() {
           <meta name="description" content="About the team" />
         </Head>
 
-        <h1>ABOUT</h1>
+        <div css={h1Style}>
+          <h1>About Us</h1>
+        </div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -40,7 +53,12 @@ export default function About() {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum
         </p>
-        <img src="/images/Img678.jpg" height="450" alt="A man with open eyes" />
+        <img
+          css={aboutImageStyle}
+          src="/images/Image678.jpg"
+          height="450"
+          alt="A man with open eyes"
+        />
       </Layout>
     </div>
   );

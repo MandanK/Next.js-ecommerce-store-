@@ -62,7 +62,7 @@ const animalsDatabase = [
     age: 6,
   },
   {
-    image: 'Image7-2.jpg',
+    image: 'Image7.jpg',
     id: 7,
     name: 'Alien Mind Control mask',
     //description:
@@ -84,7 +84,7 @@ const animalsDatabase = [
   {
     image: 'Image9.jpg',
     id: 9,
-    name: 'Finger Covers for Cheesy, Greasy, Sticky Fingers',
+    name: 'Finger Covers for Cheesy Fingers',
     //description:
     //'24234234 234 234234234234 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',//
     type: 'Bear',
@@ -104,7 +104,7 @@ const animalsDatabase = [
   {
     image: 'Image11.jpg',
     id: 11,
-    name: 'Potato Pal',
+    name: 'Fetus Soap',
     //description:
     //'24234234 234 234234234234 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',//
     type: 'Bear',
@@ -112,7 +112,7 @@ const animalsDatabase = [
     age: 6,
   },
 
-  /*{
+  {
     image: 'Image12.jpg',
     id: 12,
     name: 'Scary Zombie Digital Mask',
@@ -131,7 +131,37 @@ const animalsDatabase = [
     type: 'Bear',
     accessory: 'Honey',
     age: 6,
-  }, */
+  },
+  {
+    image: 'Image14-1.jpg',
+    id: 14,
+    name: 'Toilet Golf Set',
+    //description:
+    //'24234234 234 234234234234 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',//
+    type: 'Bear',
+    accessory: 'Honey',
+    age: 6,
+  },
+  {
+    image: 'Image15-2.jpg',
+    id: 15,
+    name: 'Hamster Shredder',
+    //description:
+    //'24234234 234 234234234234 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',//
+    type: 'Bear',
+    accessory: 'Honey',
+    age: 6,
+  },
+  {
+    image: 'Image16.jpg',
+    id: 16,
+    name: 'Umbrella Hat',
+    //description:
+    //'24234234 234 234234234234 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',//
+    type: 'Bear',
+    accessory: 'Honey',
+    age: 6,
+  },
 ];
 
 export default animalsDatabase;

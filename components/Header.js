@@ -5,8 +5,12 @@ const headerStyles = css`
   background-color: white;
   padding: 10px 10px;
   border-radius: 20px;
-  margin: 8px 8px 20px;
+  margin: 8px 8px 25px;
   text-align: center;
+  a {
+    color: #505050;
+    font-size: 16px;
+  }
 
   a + a {
     margin-left: 25px;
@@ -15,7 +19,7 @@ const headerStyles = css`
 
 const logoStyles = css`
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 `;
 
 const topBarStyle = css`

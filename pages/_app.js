@@ -8,13 +8,17 @@ function MyApp({ Component, pageProps }) {
           html,
           body {
             margin: 0;
-            font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-              Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-              sans-serif;
+
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 16px;
+            line-height: 1.5em;
+            position: absolute;
+            left: 25%;
           }
 
           main {
-            margin: 0 60px;
+            margin: 0 8px;
           }
         `}
       />

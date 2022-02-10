@@ -4,7 +4,8 @@ import Header from './Header';
 
 const wrapper = css`
   width: 1000px;
-  margin: auto;
+
+  margin: 0 auto;
   a {
     text-decoration: none;
   }

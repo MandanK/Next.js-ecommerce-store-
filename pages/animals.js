@@ -15,7 +15,7 @@ const productDescriptionStyle = css`
   float: none;
 `;
 
-const weirdosOddStyle = css`
+const weirdosColoredStyle = css`
   text-align: center;
   float: left;
   width: 377px;
@@ -29,7 +29,7 @@ const weirdosOddStyle = css`
   margin-right: 60px;
 `;
 
-const weirdosEvenStyle = css`
+const weirdosWhiteStyle = css`
   text-align: center;
   float: left;
   width: 377px;
@@ -91,8 +91,8 @@ export default function Animals(props) {
             key={`animal-${animal.id}`}
             css={
               animal.id % 4 == 0 || animal.id % 4 == 1
-                ? weirdosEvenStyle
-                : weirdosOddStyle
+                ? weirdosWhiteStyle
+                : weirdosColoredStyle
             }
           >
             {/* Dynamic link, eg. /animals/1, / animals/2, etc */}

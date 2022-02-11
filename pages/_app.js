@@ -13,8 +13,6 @@ function MyApp({ Component, pageProps }) {
             font-family: sans-serif;
             font-size: 16px;
             line-height: 1.5em;
-            position: absolute;
-            left: 25%;
           }
 
           main {

@@ -133,7 +133,7 @@ const animalsDatabase = [
     age: 6,
   },
   {
-    image: 'Image14-1.jpg',
+    image: 'Image14.jpg',
     id: 14,
     name: 'Toilet Golf Set',
     //description:
@@ -143,7 +143,7 @@ const animalsDatabase = [
     age: 6,
   },
   {
-    image: 'Image15-2.jpg',
+    image: 'Image15.jpg',
     id: 15,
     name: 'Hamster Shredder',
     //description:

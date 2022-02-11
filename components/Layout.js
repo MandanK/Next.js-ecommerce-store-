@@ -5,7 +5,12 @@ import Header from './Header';
 const wrapper = css`
   width: 1000px;
 
-  margin: 0 auto;
+  margin-right: auto; /* 1 */
+  margin-left: auto; /* 1 */
+
+  padding-right: 10px; /* 3 */
+  padding-left: 10px; /* 3 */
+
   a {
     text-decoration: none;
   }

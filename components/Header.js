@@ -20,13 +20,16 @@ const headerStyles = css`
 const logoStyles = css`
   text-align: center;
   margin-bottom: 25px;
+  margin-top: 40px;
 `;
 
 const topBarStyle = css`
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 10001;
+  left: 0;
+  right: 0;
+
+  z-index: 999;
   font-size: 18px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

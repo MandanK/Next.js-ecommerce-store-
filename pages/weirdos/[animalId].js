@@ -1,6 +1,7 @@
 import Head from 'next/head';
+import Image from 'next/image;';
 import Layout from '../../components/Layout';
-import animalsDatabase from '../../util/database';
+import { getAnimal } from '../../util/database';
 
 export default function SingleAnimal(props) {
   return (
@@ -20,7 +21,9 @@ export default function SingleAnimal(props) {
       {/*The name of the folder made in public is unfortunatelt-foxes */}
       {/*<image src= {`/unfortunately-foxes/${props.animal.id}.jpg`} width="300" height="300" /> */}
 
-      <div>is: {props.animal.id}</div>
+      {/*<image src={`/unfortunately-foxes/${props.animal.id}.jpeg`} width="300", height="300"*/}
+
+      <div>id: {props.animal.id}</div>
       <div>name: {props.animal.name}</div>
       <div>age: {props.animal.age}</div>
       <div>type: {props.animal.type}</div>
@@ -30,21 +33,15 @@ export default function SingleAnimal(props) {
 }
 // The parameter `context` gets passed from Next.js
 // and includes a bunch of information about the request
-export function getServerSideProps(context) {
+export async function getServerSideProps(context) {
   // This is the variable that we get from the URL
   // (anything after the slash)
   const animalId = context.query.animalId;
 
-  const matchingAnimal = animalsDatabase.find((animal) => {
-    if (animal.id === animalId) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+  const animal = await getAnimal(animalId);
   return {
     props: {
-      animal: matchingAnimal,
+      animal: animal,
     },
   };
 }

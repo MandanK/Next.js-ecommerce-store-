@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import weirdosDatabase from '../util/database';
+import { getAnimals } from '../util/database';
 
 const h1Style = css`
   padding-bottom: 20px;
@@ -128,16 +128,16 @@ export default function Animals(props) {
 // getServerSideProps is exported from your files
 // ONLY files in /pages and gets imported by Next.js
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
   // Important:
   // Always return an object from getServerSideProps
   // - Always return a key in that object that is called props
-
+  const animals = await getAnimals();
   return {
     props: {
       // In the props object, you can pass back
       // whatever information you want
-      animals: weirdosDatabase,
+      animals: animals,
     },
   };
 }

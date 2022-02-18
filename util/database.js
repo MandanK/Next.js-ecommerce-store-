@@ -1,6 +1,32 @@
-const animalsDatabase = [
-  {
-    image: 'Image1.jpg',
+import { config } from 'dotenv-safe';
+import postgres from 'postgres';
+
+// Read the environment variables from the .env
+// file, which then be available for all following code
+
+config();
+
+const sql = postgres();
+
+export async function getAnimals() {
+  const animals = await sql`
+SELECT * FROM animals;
+`;
+  return animals;
+}
+
+export async function getAnimal(id) {
+  const [animal] = await sql`
+  SELECT * FROM animals WHERE id = ${id}
+  `;
+  return animal;
+}
+
+//const weirdosDatabase = [
+
+{
+  /* {
+ image: 'Image1.jpg',
     id: 1,
     name: 'Can of Teeth',
     //description:
@@ -162,6 +188,7 @@ const animalsDatabase = [
     accessory: 'Honey',
     age: 6,
   },
-];
+]; */
+}
 
-export default animalsDatabase;
+//*export default weirdosDatabase;//

@@ -106,7 +106,7 @@ export default function Animals(props) {
             <div css={productName}>
               <Link href={`/animals/${animal.id}`}>
                 <a css={aStyle}>
-                  {animal.name}{' '}
+                  {animal.name}
                   {/* is a {animal.type} with a {animal.accessory} */}
                 </a>
               </Link>

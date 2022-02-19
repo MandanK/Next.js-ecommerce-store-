@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image;';
+//import Image from 'next/image;';
 import Layout from '../../components/Layout';
 import { getAnimal } from '../../util/database';
 
@@ -15,13 +15,10 @@ export default function SingleAnimal(props) {
         />
       </Head>
       <h1>
-        {props.animal.name} ({props.animal.type})
+        {props.animal.name} {props.animal.type}
       </h1>
-      {/* Images that are saved in a folder in public can be used here */}
-      {/*The name of the folder made in public is unfortunatelt-foxes */}
-      {/*<image src= {`/unfortunately-foxes/${props.animal.id}.jpg`} width="300" height="300" /> */}
 
-      {/*<image src={`/unfortunately-foxes/${props.animal.id}.jpeg`} width="300", height="300"*/}
+      <img src={'/images/' + props.animal.image} alt="BIZARRE" />
 
       <div>id: {props.animal.id}</div>
       <div>name: {props.animal.name}</div>

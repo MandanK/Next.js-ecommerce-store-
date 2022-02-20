@@ -96,7 +96,7 @@ export default function Animals(props) {
             }
           >
             {/* Dynamic link, eg. /animals/1, / animals/2, etc */}
-            <div css={productImageDiv}>
+            <div>
               <img
                 css={productImage}
                 src={'/images/' + animal.image}

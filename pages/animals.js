@@ -71,6 +71,7 @@ const productName = css`
 const aStyle = css`
   color: black;
   font-size: 17px;
+  cursor: pointer;
 `;
 
 export default function Animals(props) {
@@ -97,11 +98,15 @@ export default function Animals(props) {
           >
             {/* Dynamic link, eg. /animals/1, / animals/2, etc */}
             <div>
-              <img
-                css={productImage}
-                src={'/images/' + animal.image}
-                alt="BIZARRE"
-              />
+              <Link href={`/animals/${animal.id}`}>
+                <a css={aStyle}>
+                  <img
+                    css={productImage}
+                    src={'/images/' + animal.image}
+                    alt="BIZARRE"
+                  />
+                </a>
+              </Link>
             </div>
             <div css={productName}>
               <Link href={`/animals/${animal.id}`}>

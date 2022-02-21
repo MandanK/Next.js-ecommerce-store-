@@ -1,9 +1,7 @@
 import { css } from '@emotion/react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 const headerStyles = css`
-  background-color: white;
   padding: 10px 10px;
   border-radius: 20px;
   margin: 8px 8px 25px;
@@ -52,11 +50,15 @@ export default function Header({ cartItemNumber }) {
       </div>
       <div css={headerStyles}>
         <div css={logoStyles}>
-          <img
-            src="/images/BIZARRE.gif"
-            width="160"
-            alt="Bizarre Bazaar.com Logo"
-          />
+          <Link href="/">
+            <a>
+              <img
+                src="/images/BIZARRE.gif"
+                width="160"
+                alt="Bizarre Bazaar.com Logo"
+              />
+            </a>
+          </Link>
         </div>
         <Link href="/">
           <a>HOME</a>

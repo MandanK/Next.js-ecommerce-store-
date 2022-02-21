@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const headerStyles = css`
   background-color: white;
@@ -43,7 +44,7 @@ const topBarStyle = css`
   box-sizing: border-box;
 `;
 
-export default function Header() {
+export default function Header({ cartItemNumber }) {
   return (
     <header>
       <div class="announcement-bar" css={topBarStyle}>
@@ -65,6 +66,11 @@ export default function Header() {
         </Link>
         <Link href="/about">
           <a>ABOUT US</a>
+        </Link>
+        <Link href="/cart">
+          <a>
+            Cart <span data-test-id="cart-count">({cartItemNumber})</span>
+          </a>
         </Link>
       </div>
     </header>

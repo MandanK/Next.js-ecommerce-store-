@@ -1,4 +1,8 @@
 import { css, Global } from '@emotion/react';
+import Cookies from 'js-cookie';
+import { useEffect, useState } from 'react';
+import Layout from '../components/Layout';
+import { getItemsInCart } from '../util/cookies';
 
 function MyApp({ Component, pageProps }) {
   return (

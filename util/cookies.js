@@ -1,74 +1,48 @@
 import Cookies from 'js-cookie';
 
-export function addCookies(productId, itemNum, size, cookies) {
-  // Find if the teamMemberId matches any of the array elements
-  // const cookies = Cookies.getJSON('cart');
-  const idInArray =
-    cookies.some((product) => product.id === productId) &&
-    cookies.some((product) => product.size === size);
-
-  // If the array doesn't contain an element with the teamMemberId,
-  // then add a new array element at the end
-  if (!idInArray) {
-    console.log('It does not exist');
-    return [
-      ...cookies,
-      {
-        id: productId,
-        quantity: itemNum,
-        size: size,
-      },
-    ];
+export function getParsedCookie(key) {
+  try {
+    const cookie = Cookies.get(key);
+    if (cookie) {
+      return JSON.parse(cookie);
+    }
+  } catch (err) {
+    return undefined;
   }
-
-  // If the array does contain an element matching the
-  // size, increase the number of items in that
-  // element by quantity
-  return cookies.map((item) => {
-    if (size === item.size) {
-      item.quantity = itemNum + item.quantity;
-    }
-    return item;
-  });
 }
 
-export function addQuantity(productId, size) {
-  const cookies = Cookies.getJSON('cart');
-  console.log('cookies', cookies);
-  return cookies.map((item) => {
-    if (productId === item.id && size === item.size) {
-      item.quantity = item.quantity + 1;
-    }
-    return item;
-  });
+export function setParsedCookie(key, value) {
+  Cookies.set(key, JSON.stringify(value));
 }
 
-export function subQuantity(productId, size) {
-  const cookies = Cookies.getJSON('cart');
-
-  return cookies.map((item) => {
-    if (productId === item.id && size === item.size) {
-      item.quantity = item.quantity - 1;
-    }
-    return item;
-  });
+export function deleteCookie(key) {
+  Cookies.remove(key);
 }
 
-export function changeQuantity(productId, quantity, size, cookies) {
-  // const cookies = Cookies.getJSON('cart');
-
-  return cookies.map((item) => {
-    if (productId === item.id && size === item.size) {
-      item.quantity = quantity;
-    }
-    return item;
-  });
+export function getItemsInCart(key) {
+  const cookie = getParsedCookie(key);
+  let num = 0;
+  let item;
+  for (item in cookie) {
+    num += parseInt(cookie[item].quantity);
+  }
+  return num;
 }
-export function deleteProduct(index, cookies) {
-  // const cookies = Cookies.getJSON('cart');
 
-  cookies.splice(index, 1);
-  return cookies;
-  // const newCookies = cookies.filter((e) => e.index !== index);
-  // return newCookies;
+export function addShoppingToCookie(key, id, quantity) {
+  const cookieValue = getParsedCookie(key) || [];
+  const existIdOnArray = cookieValue.some((cookieObject) => {
+    return cookieObject.id === id;
+  });
+  let newCookie;
+  if (existIdOnArray) {
+    const existingElementIndex = cookieValue.findIndex((e) => {
+      return e.id === id;
+    });
+    cookieValue[existingElementIndex].quantity += quantity;
+    newCookie = cookieValue;
+  } else {
+    newCookie = [...cookieValue, { id: id, quantity: quantity }];
+  }
+  setParsedCookie(key, newCookie);
 }

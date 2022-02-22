@@ -15,26 +15,20 @@ export default function SingleAnimal(props) {
   return (
     <Layout cartItemNumber={props.cartItemNumber}>
       <Head>
-        <title>
-          {props.animal.name} ({props.animal.type})
-        </title>
+        <title>{props.animal.name}</title>
         <meta
           description={`${props.animal.name} is a ${props.animal.type} with a ${props.animal.accessory}`}
         />
       </Head>
-      <h1>
-        {props.animal.name} {props.animal.type}
-      </h1>
-      <img src={'/images/' + props.animal.image} alt="BIZARRE" />
-      <div>id: {props.animal.id}</div>
-      <div>name: {props.animal.name}</div>
-      <div>age: {props.animal.age}</div>
-      <div>type: {props.animal.type}</div>
-      <div>accessory: {props.animal.accessory}</div>
+      <h1>{props.animal.name}</h1>
+      <img src={'/images/' + props.animal.image} alt="Product Images" />
+      <div>{props.animal.name}</div>
       <br />
-      <span>Price: </span>
+      <br />
+      <div>{props.animal.description}</div>
+      <br />
+      <span>Price:</span>
       <span data-test-id="product-price">{props.animal.price}</span>
-      <span>€</span> <br />
       <input
         id="numberToBuy"
         data-test-id="product-quantity"
@@ -45,6 +39,7 @@ export default function SingleAnimal(props) {
           setNumberToBuy(parseInt(e.target.value));
         }}
       />
+      ç
       <button onClick={buy} data-test-id="product-add-to-cart">
         add to cart
       </button>

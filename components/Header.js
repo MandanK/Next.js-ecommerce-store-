@@ -45,7 +45,7 @@ const topBarStyle = css`
 export default function Header({ cartItemNumber }) {
   return (
     <header>
-      <div class="announcement-bar" css={topBarStyle}>
+      <div className="announcement-bar" css={topBarStyle}>
         <p>Make your life even weirder</p>
       </div>
       <div css={headerStyles}>

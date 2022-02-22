@@ -116,9 +116,6 @@ export default function Animals(props) {
                 </a>
               </Link>
             </div>
-            <div css={productDescriptionStyle}>
-              <div css={productDescription}>{animal.description}</div>
-            </div>
           </div>
         );
       })}

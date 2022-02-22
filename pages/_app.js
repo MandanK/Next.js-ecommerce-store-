@@ -14,8 +14,8 @@ function MyApp({ Component, pageProps }) {
             font-size: 16px;
             line-height: 1.5em;
 
-            //background-image: url('/images/stars_07.jpg');
-            //background-size: 500px, 500px;
+            background-image: url('/images/birthday.jpg');
+            background-size: 500px, 500px;
           }
 
           main {

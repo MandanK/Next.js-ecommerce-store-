@@ -4,13 +4,14 @@ import Layout from '../components/Layout';
 
 const h1Style = css`
   text-align: center;
-  padding-bottom: 8px;
+  padding-bottom: 11px;
   padding-top: 0.5px;
 `;
 
-const introVideoStyle = css`
+const imageStyle = css`
   text-align: center;
-  padding: 25px 25px;
+  margin-top: 35px;
+  margin-bottom: 35px;
 `;
 
 export default function Home() {
@@ -54,7 +55,12 @@ export default function Home() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <img src="/images/chicken1.jpg" width="960" alt="screeming chicken" />
+          <img
+            css={imageStyle}
+            src="/images/chicken1.jpg"
+            width="960"
+            alt="screeming chicken"
+          />
 
           {/*<div css={introVideoStyle}>
             <iframe
@@ -113,7 +119,12 @@ export default function Home() {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <img src="/images/chicken2.jpg" width="960" alt="screeming chicken" />
+        <img
+          css={imageStyle}
+          src="/images/chicken2.jpg"
+          width="960"
+          alt="screeming chicken"
+        />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

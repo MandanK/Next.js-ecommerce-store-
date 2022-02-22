@@ -4,12 +4,13 @@ import Layout from '../components/Layout';
 
 const h1Style = css`
   text-align: center;
-  padding-bottom: 8px;
+  padding-bottom: 11px;
   padding-top: 0.5px;
 `;
 const aboutImageStyle = css`
   text-align: center;
-  padding: 35px 25px;
+  margin-top: 35px;
+  margin-bottom: 35px;
 `;
 
 export default function About() {

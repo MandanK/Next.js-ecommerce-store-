@@ -11,10 +11,15 @@ function MyApp({ Component, pageProps }) {
 
             box-sizing: border-box;
             font-family: sans-serif;
-            font-size: 16px;
+            font-size: 17px;
+            font-weight: 500;
             line-height: 1.5em;
 
-            background-image: url('/images/birthday.jpg');
+            background-image: linear-gradient(
+                rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.9)
+              ),
+              url('/images/952.jpg');
             background-size: 500px, 500px;
           }
 

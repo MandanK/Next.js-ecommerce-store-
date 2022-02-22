@@ -7,8 +7,9 @@ const headerStyles = css`
   margin: 8px 8px 25px;
   text-align: center;
   a {
-    color: #505050;
-    font-size: 16px;
+    color: #404040;
+    font-size: 18px;
+    font-weight: bold;
   }
 
   a + a {
@@ -19,7 +20,7 @@ const headerStyles = css`
 const logoStyles = css`
   text-align: center;
   margin-bottom: 25px;
-  margin-top: 40px;
+  margin-top: 75px;
 `;
 
 const topBarStyle = css`
@@ -29,7 +30,7 @@ const topBarStyle = css`
   right: 0;
 
   z-index: 999;
-  font-size: 18px;
+  font-size: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
@@ -37,7 +38,7 @@ const topBarStyle = css`
   color: white;
   padding: 2px 0;
   font-weight: bold;
-  line-height: 0.1;
+  line-height: 0.4;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 `;
@@ -54,7 +55,7 @@ export default function Header({ cartItemNumber }) {
             <a>
               <img
                 src="/images/BIZARRE.gif"
-                width="160"
+                width="190"
                 alt="Bizarre Bazaar.com Logo"
               />
             </a>

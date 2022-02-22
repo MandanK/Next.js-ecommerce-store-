@@ -5,8 +5,8 @@ import Layout from '../components/Layout';
 import { getAnimals } from '../util/database';
 
 const h1Style = css`
-  padding-bottom: 20px;
-  padding-top: 0.5px;
+  padding-bottom: 40px;
+  padding-top: 12px;
   font-size: 15px;
   text-align: center;
 `;
@@ -25,7 +25,7 @@ const weirdosColoredStyle = css`
   min-height: 200px;
   background-color: #ffcc4d;
   padding: 15px;
-  margin: 10px;
+  margin: 20px;
   margin-right: 60px;
 `;
 
@@ -36,7 +36,7 @@ const weirdosWhiteStyle = css`
   border-radius: 5px;
   border: 1px solid #ccc;
   padding: 15px;
-  margin: 10px;
+  margin: 20px;
   min-height: 200px;
   margin-right: 60px;
 `;
@@ -54,7 +54,7 @@ const productImage = css`
   height: 283px;
   width: 377px;
   margin-right: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 25px;
 `;
 
 const productDescription = css`
@@ -70,7 +70,7 @@ const productName = css`
 `;
 const aStyle = css`
   color: black;
-  font-size: 17px;
+  font-size: 20px;
   cursor: pointer;
 `;
 

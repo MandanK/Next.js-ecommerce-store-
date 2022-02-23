@@ -6,27 +6,34 @@ import { cartSum } from '../util/cart';
 import { getParsedCookie, setParsedCookie } from '../util/cookies';
 import { getAnimals } from '../util/database';
 
+const productstyles = css`
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+`;
+
 export default function Cart(props) {
   const [cart, setCart] = useState(props.cart);
   const [detailedCart, setDetailedCart] = useState([{}]);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    const cartDetails = cart.map((animal) => {
-      const found = props.animals.find((element) => element.id === animal.id);
+    const cartDetails = cart.map((prod) => {
+      const found = props.products.find((element) => element.id === prod.id);
       return {
-        id: animal.id,
+        id: prod.id,
         name: found.name,
-        qty: animal.quantity,
+        qty: prod.quantity,
         price: found.price,
       };
     });
     setDetailedCart(cartDetails);
-  }, [cart, props.animals]);
+  }, [cart, props.products]);
 
   useEffect(() => {
-    setTotalPrice(cartSum('cart', cart, props.animals));
-  }, [cart, props.animals]);
+    setTotalPrice(cartSum('cart', cart, props.products));
+  }, [cart, props.products]);
 
   // console.log('cart details ' + JSON.stringify(cartDetails));
 
@@ -62,13 +69,14 @@ export default function Cart(props) {
           return (
             <div
               key={`products-${singleItem.id}`}
+              css={productstyles}
               data-test-id={`cart-product-${singleItem.id}`}
             >
               <span>{singleItem.qty} x </span>
-              <Link href={`/animals/${singleItem.id}`}>
+              <Link href={`/products/${singleItem.id}`}>
                 <a>{singleItem.name}</a>
               </Link>{' '}
-              <span>{singleItem.price}</span>
+              <span>{singleItem.price} Euro</span>
               <button
                 onClick={() => remove(singleItem.id)}
                 data-test-id={`cart-product-remove-${singleItem.id}`}

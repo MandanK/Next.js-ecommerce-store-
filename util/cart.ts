@@ -1,4 +1,16 @@
-export function cartSum(key, cart, animals) {
+// import { getParsedCookie } from './cookies';
+// import { getProducts } from './database';
+import { CartItem } from './cookies';
+
+export type Animal = {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+};
+
+export function cartSum(key: string, cart: CartItem[], animals: Animal[]) {
   // const cart = getParsedCookie(key);
   // const products = await getProducts();
   const detailedCart = [];

@@ -1,6 +1,11 @@
 import Cookies from 'js-cookie';
 
-export function getParsedCookie(key) {
+export type CartItem = {
+  id: number;
+  quantity: number;
+};
+
+export function getParsedCookie(key: string) {
   try {
     const cookie = Cookies.get(key);
     if (cookie) {
@@ -11,15 +16,15 @@ export function getParsedCookie(key) {
   }
 }
 
-export function setParsedCookie(key, value) {
+export function setParsedCookie(key: string, value: CartItem[]) {
   Cookies.set(key, JSON.stringify(value));
 }
 
-export function deleteCookie(key) {
+export function deleteCookie(key: string) {
   Cookies.remove(key);
 }
 
-export function getItemsInCart(key) {
+export function getItemsInCart(key: string) {
   const cookie = getParsedCookie(key);
   let num = 0;
   let item;
@@ -29,14 +34,14 @@ export function getItemsInCart(key) {
   return num;
 }
 
-export function addShoppingToCookie(key, id, quantity) {
+export function addShoppingToCookie(key: string, id: number, quantity: number) {
   const cookieValue = getParsedCookie(key) || [];
-  const existIdOnArray = cookieValue.some((cookieObject) => {
+  const existIdOnArray = cookieValue.some((cookieObject: CartItem) => {
     return cookieObject.id === id;
   });
   let newCookie;
   if (existIdOnArray) {
-    const existingElementIndex = cookieValue.findIndex((e) => {
+    const existingElementIndex = cookieValue.findIndex((e: CartItem) => {
       return e.id === id;
     });
     cookieValue[existingElementIndex].quantity += quantity;

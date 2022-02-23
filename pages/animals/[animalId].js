@@ -64,6 +64,7 @@ const buttonStyle = css`
   background-color: #ffcc4d;
   border: 0.2px solid #b8b8b8;
   margin-top: 15px;
+  margin-bottom: 55px;
   width: 120px;
   cursor: pointer;
 `;

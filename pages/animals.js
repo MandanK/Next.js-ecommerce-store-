@@ -59,6 +59,10 @@ const aStyle = css`
   cursor: pointer;
 `;
 
+const pStyle = css`
+  color: white;
+`;
+
 export default function Animals(props) {
   console.log('props', JSON.stringify(props));
   return (
@@ -105,7 +109,7 @@ export default function Animals(props) {
         );
       })}
       <div>
-        <p> g</p>
+        <p css={pStyle}>g </p>
       </div>
     </Layout>
   );

@@ -40,7 +40,7 @@ export default function ThankYou() {
             content="Order confirmation and thank you page"
           />
         </Head>
-        <h1 css={h1Style}>Congrats mate! You are now officially a </h1>
+        <h1 css={h1Style}>Congrats mate! You're now officially </h1>
 
         <img
           css={imageStyle}

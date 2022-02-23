@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { getItemsInCart } from '../util/cookies';
+import Footer from './footer';
 import Header from './Header';
 
 const wrapper = css`
@@ -41,6 +42,7 @@ export default function Layout(props) {
       <Header cartItemNumber={cartItemNumber} />
 
       <main>{props.children}</main>
+      <Footer />
     </div>
   );
 }

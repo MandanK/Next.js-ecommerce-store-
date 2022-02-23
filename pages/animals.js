@@ -11,10 +11,6 @@ const h1Style = css`
   text-align: center;
 `;
 
-const productDescriptionStyle = css`
-  float: none;
-`;
-
 const weirdosColoredStyle = css`
   text-align: center;
   float: left;
@@ -41,13 +37,6 @@ const weirdosWhiteStyle = css`
   margin-right: 60px;
 `;
 
-const productImageDiv = css`
-  text-align: center;
-  margin: 0 15px 0 0;
-  width: 377px;
-  margin-right: 20px;
-`;
-
 const productImage = css`
   float: left;
   margin: 0 15px 0 0;
@@ -57,17 +46,13 @@ const productImage = css`
   padding-bottom: 25px;
 `;
 
-const productDescription = css`
-  margin: 0 15px 0 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-`;
-
 const productName = css`
   float: none;
   margin: 0 15px 0 0;
   font-family: sans-serif;
   font-weight: bolder;
 `;
+
 const aStyle = css`
   color: black;
   font-size: 20px;
@@ -119,6 +104,9 @@ export default function Animals(props) {
           </div>
         );
       })}
+      <div>
+        <p> g</p>
+      </div>
     </Layout>
   );
 }

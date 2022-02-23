@@ -1,8 +1,72 @@
+import { css } from '@emotion/react';
 import Head from 'next/head';
 import { useState } from 'react';
 import Layout from '../../components/Layout';
 import { addShoppingToCookie } from '../../util/cookies';
 import { getAnimal } from '../../util/database';
+
+const h1Style = css`
+  display: block;
+  font-size: 2em;
+  font-weight: bolder;
+  font-family: sans-serif;
+  margin-top: 85px;
+  text-align: center;
+`;
+
+const imageStyle = css`
+  text-align: center;
+  float: left;
+  width: 508px;
+  margin-bottom: 20px;
+  min-height: 200px;
+  background-color: #ffcc4d;
+  padding: 8px;
+  margin: 20px;
+  margin-right: 60px;
+  margin-top: 70px;
+  margin-bottom: 90px;
+`;
+
+const descriptionStyle = css`
+  text-align: center;
+  float: left;
+  width: 270px;
+  padding: 15px;
+  margin: 20px;
+  min-height: 100px;
+  margin-right: 60px;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+`;
+
+const spanStyle = css`
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align: center;
+`;
+const priceStyle = css`
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+`;
+
+const inputStyle = css`
+  background-color: #fff676;
+  font-size: 15px;
+  border: 0.2px solid #b8b8b8;
+  text-align: center;
+`;
+
+const buttonStyle = css`
+  text-align: center;
+  font-size: 15px;
+  background-color: #ffcc4d;
+  border: 0.2px solid #b8b8b8;
+  margin-top: 15px;
+  width: 120px;
+  cursor: pointer;
+`;
 
 export default function SingleAnimal(props) {
   const [numberToBuy, setNumberToBuy] = useState(1);
@@ -20,16 +84,24 @@ export default function SingleAnimal(props) {
           description={`${props.animal.name} is a ${props.animal.type} with a ${props.animal.accessory}`}
         />
       </Head>
-      <h1>{props.animal.name}</h1>
-      <img src={'/images/' + props.animal.image} alt="Product Images" />
-      <div>{props.animal.name}</div>
+      <h1 css={h1Style}>{props.animal.name}</h1>
+      <img
+        css={imageStyle}
+        src={'/images/' + props.animal.image}
+        alt="Product Images"
+      />
       <br />
       <br />
-      <div>{props.animal.description}</div>
+      <div css={descriptionStyle}>{props.animal.description}</div>
       <br />
-      <span>Price:</span>
-      <span data-test-id="product-price">{props.animal.price}</span>
+      <span css={spanStyle}>Price: </span>
+      <span css={priceStyle} data-test-id="product-price">
+        {props.animal.price}
+      </span>
+      <br />
+
       <input
+        css={inputStyle}
         id="numberToBuy"
         data-test-id="product-quantity"
         type="number"
@@ -39,9 +111,13 @@ export default function SingleAnimal(props) {
           setNumberToBuy(parseInt(e.target.value));
         }}
       />
-      ç
-      <button onClick={buy} data-test-id="product-add-to-cart">
-        add to cart
+
+      <button
+        css={buttonStyle}
+        onClick={buy}
+        data-test-id="product-add-to-cart"
+      >
+        Add Weirdies
       </button>
     </Layout>
   );

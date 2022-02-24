@@ -2,15 +2,56 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Layout from '../components/Layout';
 import { cartSum } from '../util/cart';
 import { getParsedCookie, setParsedCookie } from '../util/cookies';
 import { getAnimals } from '../util/database';
 
-const productstyles = css`
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-bottom: 20px;
+const h1Style = css`
+  font-size: 38px;
+  font-weight: bold;
+  padding-top: 65px;
+  text-align: center;
+  margin-bottom: 40px;
+`;
+
+const itemStyle = css`
+  line-height: 2.5;
+`;
+
+const aStyle = css`
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+`;
+
+const quantStyle = css`
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 15px;
+`;
+
+const priceStyle = css`
+  font-size: 18px;
+  margin-left: 40px;
+  margin-right: 45px;
+  margin-bottom: 0px;
+`;
+
+const buttonStyle = css`
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  justify-content: flex-end;
+  margin-left: 135px;
+  margin-top: 0px;
+  font-size: 14px;
+  background-color: #ffcc4d;
+  border: 0.2px solid #b8b8b8;
+  width: 70px;
+  height: 22px;
+  cursor: pointer;
 `;
 
 export default function Cart(props) {
@@ -35,10 +76,7 @@ export default function Cart(props) {
     setTotalPrice(cartSum('cart', cart, props.products));
   }, [cart, props.products]);
 
-  // console.log('cart details ' + JSON.stringify(cartDetails));
-
   function remove(id) {
-    // 1. get the value of the cookie
     const cookieValue = getParsedCookie('cart') || [];
 
     const newCookie = cookieValue.filter((cookieObject) => {
@@ -46,7 +84,6 @@ export default function Cart(props) {
     });
     setDetailedCart(detailedCart);
 
-    // 3. set the new value of the cookie
     setCart(
       newCookie.filter((cartObject) => {
         return cartObject.id !== id;
@@ -56,46 +93,53 @@ export default function Cart(props) {
   }
 
   return (
-    <>
-      <Head>
-        <title>Cart</title>
-        <meta name="Cart page" content="The products in your shopping car" />
-      </Head>
+    <Layout>
+      <>
+        <Head>
+          <title>Cart</title>
+          <meta name="Cart page" content="The products in your basket" />
+        </Head>
 
-      <div>
-        <h1>Cart</h1>
-        <br />
-        {detailedCart.map((singleItem) => {
-          return (
-            <div
-              key={`products-${singleItem.id}`}
-              css={productstyles}
-              data-test-id={`cart-product-${singleItem.id}`}
-            >
-              <span>{singleItem.qty} x </span>
-              <Link href={`/products/${singleItem.id}`}>
-                <a>{singleItem.name}</a>
-              </Link>{' '}
-              <span>{singleItem.price} Euro</span>
-              <button
-                onClick={() => remove(singleItem.id)}
-                data-test-id={`cart-product-remove-${singleItem.id}`}
+        <div>
+          <h1 css={h1Style}>Your Cart</h1>
+          <br />
+          {detailedCart.map((singleItem) => {
+            return (
+              <div
+                key={`products-${singleItem.id}`}
+                css={itemStyle}
+                data-test-id={`cart-product-${singleItem.id}`}
               >
-                Remove
-              </button>
-            </div>
-          );
-        })}
-        <div>Total price: </div>
-        <span data-test-id="cart-total">{totalPrice}</span>
-        <br />
-        <Link href="/checkout" passHref>
-          <button component="a" data-test-id="cart-checkout">
-            Purchase
-          </button>
-        </Link>
-      </div>
-    </>
+                <span css={quantStyle}>{singleItem.qty} </span>
+                <Link href={`/products/${singleItem.id}`}>
+                  <a css={aStyle}>{singleItem.name}</a>
+                </Link>{' '}
+                <br />
+                <span css={priceStyle}>{singleItem.price}</span>
+                {/* <Link href={`/images/${singleItem.id}`}>
+                  <a>{singleItem.animalImage}</a>
+            </Link> */}
+                <button
+                  css={buttonStyle}
+                  onClick={() => remove(singleItem.id)}
+                  data-test-id={`cart-product-remove-${singleItem.id}`}
+                >
+                  Remove
+                </button>
+              </div>
+            );
+          })}
+          <div>Total:</div>
+          <span data-test-id="cart-total">{totalPrice}</span>
+          <br />
+          <Link href="/checkout" passHref>
+            <button component="a" data-test-id="cart-checkout">
+              Buy
+            </button>
+          </Link>
+        </div>
+      </>
+    </Layout>
   );
 }
 

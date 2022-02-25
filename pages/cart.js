@@ -12,7 +12,7 @@ const h1Style = css`
   font-weight: bold;
   padding-top: 65px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 `;
 
 const itemStyle = css`
@@ -34,7 +34,7 @@ const quantStyle = css`
 
 const priceStyle = css`
   font-size: 18px;
-  margin-left: 40px;
+  margin-left: 36px;
   margin-right: 45px;
   margin-bottom: 0px;
 `;
@@ -42,15 +42,64 @@ const priceStyle = css`
 const buttonStyle = css`
   display: flex;
   flex-direction: row;
-  text-align: right;
+  text-align: center;
   justify-content: flex-end;
   margin-left: 135px;
-  margin-top: 0px;
-  font-size: 14px;
+  margin-top: -31px;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #f2ae75;
+  border: 0.2px solid #b8b8b8;
+  width: 65px;
+  height: 22px;
+  cursor: pointer;
+`;
+
+const totalStyle = css`
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 35px;
+  margin-left: 35px;
+  margin-bottom: 11px;
+`;
+
+const tPriceStyle = css`
+  font-size: 18px;
+  margin-left: 35px;
+`;
+
+const buyButStyle = css`
+  display: flex;
+  flex-direction: row;
+  margin-left: 135px;
+  margin-top: -21px;
+  margin-bottom: 55px;
+  padding-left: 19px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
   background-color: #ffcc4d;
   border: 0.2px solid #b8b8b8;
-  width: 70px;
+  width: 65px;
   height: 22px;
+  cursor: pointer;
+`;
+
+const backButStyle = css`
+  display: flex;
+  flex-direction: row;
+  margin-left: 220px;
+  margin-top: -21px;
+  margin-bottom: 55px;
+  padding-left: 19px;
+  margin-top: -76px;
+  padding-left: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  height: 22px;
+  background-color: #f2ae75;
+  border: 0.2px solid #b8b8b8;
   cursor: pointer;
 `;
 
@@ -129,12 +178,23 @@ export default function Cart(props) {
               </div>
             );
           })}
-          <div>Total:</div>
-          <span data-test-id="cart-total">{totalPrice}</span>
+          <div css={totalStyle}>Total:</div>
+          <span css={tPriceStyle} data-test-id="cart-total">
+            {totalPrice.toFixed(2)}
+          </span>
           <br />
           <Link href="/checkout" passHref>
-            <button component="a" data-test-id="cart-checkout">
+            <button
+              css={buyButStyle}
+              component="a"
+              data-test-id="cart-checkout"
+            >
               Buy
+            </button>
+          </Link>
+          <Link href="/animals" passHref>
+            <button css={backButStyle}>
+              <a>Back to Weirdies</a>
             </button>
           </Link>
         </div>

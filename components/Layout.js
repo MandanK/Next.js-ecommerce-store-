@@ -19,6 +19,12 @@ const wrapper = css`
   }
 `;
 
+const emojiContainer = css`
+  position: fixed;
+  top: 280px;
+  left: 50px;
+`;
+
 export default function Layout(props) {
   const [cartItemNumber, setCartItemNumber] = useState(0);
 
@@ -41,7 +47,12 @@ export default function Layout(props) {
 
       <Header cartItemNumber={cartItemNumber} />
 
-      <main>{props.children}</main>
+      <main>
+        <div css={emojiContainer}>
+          <img src="/images/welcome2.gif" width="120" alt="weird emoji" />
+        </div>
+        {props.children}
+      </main>
       <Footer />
     </div>
   );

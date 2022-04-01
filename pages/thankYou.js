@@ -50,7 +50,7 @@ export default function ThankYou() {
         />
 
         <Link href="/" passHref>
-          <button css={buttonStyle}>Back to Weirdies</button>
+          <button css={buttonStyle}>Back to Bizarre</button>
         </Link>
       </>
     </Layout>

@@ -22,7 +22,7 @@ const wrapper = css`
 const emojiContainer = css`
   position: fixed;
   top: 280px;
-  left: 50px;
+  left: 20px;
 `;
 
 export default function Layout(props) {
@@ -49,7 +49,7 @@ export default function Layout(props) {
 
       <main>
         <div css={emojiContainer}>
-          <img src="/images/welcome2.gif" width="120" alt="weird emoji" />
+          <img src="/images/welcome.gif" width="70" alt="weird emoji" />
         </div>
         {props.children}
       </main>

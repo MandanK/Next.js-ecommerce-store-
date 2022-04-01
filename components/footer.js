@@ -2,14 +2,10 @@ import { css } from '@emotion/react';
 import Link from 'next/link';
 
 const footWrap = css`
-  width: 100%auto;
+  width: 100%;
   margin-top: 35px;
-  width: 100% auto;
-  margin: 0 8px;
   height: 20%auto;
-
   padding: 20px 20px;
-
   border-radius: 20px;
   margin: 8px 8px 25px;
 `;

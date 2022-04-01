@@ -28,7 +28,6 @@ const topBarStyle = css`
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 999;
   font-size: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
